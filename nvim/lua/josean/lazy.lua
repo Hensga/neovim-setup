@@ -11,11 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  { import = "josean.plugins" },
-  { import = "josean.plugins.lsp" },
-  { "craftzdog/solarized-osaka.nvim" },
-}, {
+require("lazy").setup({ { import = "josean.plugins" }, { import = "josean.plugins.lsp" } }, {
   checker = {
     enabled = true,
     notify = false,
@@ -23,6 +19,7 @@ require("lazy").setup({
   change_detection = {
     notify = false,
   },
+  defaults = {
+    version = "*",
+  },
 })
--- Setze das Farbschema
-vim.cmd("colorscheme solarized-osaka")
